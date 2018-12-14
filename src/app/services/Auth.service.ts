@@ -21,4 +21,8 @@ login(username: string, password: string) {
   );
 }
 
+register(model: any){
+  return this._http.post('https://localhost:44370/api/auth/register', model);
+}
+
 }
