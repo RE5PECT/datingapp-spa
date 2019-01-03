@@ -12,15 +12,24 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { ErrorInterceptorProvider } from './services/error.interceptor';
 
-//Bootstrap
+import { MemberListComponent } from './member-list/member-list.component';
+import { ListsComponent } from './lists/lists.component';
+import { MessagesComponent } from './messages/messages.component';
+
+// Bootstrap
 import { BsDropdownModule } from 'ngx-bootstrap';
+import { AuthGuard } from './_guards/auth.guard';
+
 
 @NgModule({
    declarations: [
       AppComponent,
       NavbarComponent,
       HomeComponent,
-      RegisterComponent
+      RegisterComponent,
+      MemberListComponent,
+      ListsComponent,
+      MessagesComponent
    ],
    imports: [
       BrowserModule,
@@ -31,7 +40,8 @@ import { BsDropdownModule } from 'ngx-bootstrap';
    ],
    providers: [
       AuthService,
-      ErrorInterceptorProvider
+      ErrorInterceptorProvider,
+      AuthGuard
    ],
    bootstrap: [
       AppComponent
